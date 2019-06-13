@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "ngx-animation": {
+      "projectType": "library",
+      "root": "projects/ngx-animation",
+      "sourceRoot": "projects/ngx-animation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-animation/tsconfig.lib.json",
+            "project": "projects/ngx-animation/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-animation/src/test.ts",
+            "tsConfig": "projects/ngx-animation/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-animation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-animation/tsconfig.lib.json",
+              "projects/ngx-animation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-animation-demo"
 }
